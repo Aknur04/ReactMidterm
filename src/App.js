@@ -1,20 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Header from './Header';
-import Home from '../Home';
-import Post from '../Post';
-import Profile from '../Profile';
+import HomePage from './pages/HomePage';
+import PostPage from './pages/PostPage';
+import ProfilePage from './pages/ProfilePage';
+import Header from './components/Header';
 
 const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/post/:postId" component={Post} />
-        <Route path="/profile" component={Profile} />
-      </Switch>
+      <div>
+        <Header />
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/post/:postId" component={PostPage} />
+          <Route path="/profile" component={ProfilePage} />
+        </Switch>
+      </div>
     </Router>
   );
 };
 
 export default App;
+
